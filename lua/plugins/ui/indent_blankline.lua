@@ -8,7 +8,9 @@ return function(active)
     plugin = {
       "lukas-reineke/indent-blankline.nvim",
       event = "User FilePost",
-      dependencies = { "HiPhish/rainbow-delimiters.nvim" },
+      dependencies = {
+        "HiPhish/rainbow-delimiters.nvim",
+      },
       opts = {},
       config = function()
         local highlight = {

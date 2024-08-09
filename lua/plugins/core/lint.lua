@@ -15,9 +15,16 @@ return function(activate)
           lua = { "luacheck" },
           bash = { "shellcheck" },
           sh = { "shellcheck" },
-          json = { "jsonlint" },
-          php = {},
           yaml = { "yamllint" },
+          json = { "jsonlint" },
+          markdown = { "markdownlint" },
+          ansible = { "ansible-lint" },
+          python = { "pylint" },
+          dockerfile = { "hadolint" },
+          toml = { "taplo" },
+          php = {},
+          terraform = { "tflint" },
+          zsh = { "shellcheck" },
         }
 
         lint.linters.luacheck.args = {

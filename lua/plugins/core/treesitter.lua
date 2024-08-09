@@ -19,38 +19,6 @@ return function(activate)
             map("n", "<leader>cj", __Utils.cmd "TSJToggle", { desc = "Join/split code block" })
           end,
         },
-        -- {
-        --   "HiPhish/rainbow-delimiters.nvim",
-        --   config = function()
-        --     -- This module contains a number of default definitions
-        --     local rainbow_delimiters = require "rainbow-delimiters"
-
-        --     ---@class rainbow_delimiters.config
-        --     vim.g.rainbow_delimiters = {
-        --       strategy = {
-        --         [""] = rainbow_delimiters.strategy["global"],
-        --         vim = rainbow_delimiters.strategy["local"],
-        --       },
-        --       query = {
-        --         [""] = "rainbow-delimiters",
-        --         lua = "rainbow-blocks",
-        --       },
-        --       priority = {
-        --         [""] = 110,
-        --         lua = 210,
-        --       },
-        --       highlight = {
-        --         "RainbowDelimiterRed",
-        --         "RainbowDelimiterYellow",
-        --         "RainbowDelimiterBlue",
-        --         "RainbowDelimiterOrange",
-        --         "RainbowDelimiterGreen",
-        --         "RainbowDelimiterViolet",
-        --         "RainbowDelimiterCyan",
-        --       },
-        --     }
-        --   end,
-        -- },
       },
       config = function()
         local options = {
@@ -60,7 +28,6 @@ return function(activate)
             "luadoc",
             "markdown",
             "markdown_inline",
-            "printf",
             "toml",
             "vim",
             "vimdoc",
@@ -79,7 +46,6 @@ return function(activate)
             "html",
             "css",
             "scss",
-            "toml",
             "vue",
             "git_config",
             "ssh_config",
@@ -87,7 +53,6 @@ return function(activate)
             "regex",
             "terraform",
             "dot",
-            "ini",
           },
 
           highlight = {

@@ -28,8 +28,22 @@ return function(activate)
         -- list of servers configured with default config.
         local default_servers = {
           "bashls",
-          "jsonls",
           "yamlls",
+          "jsonls",
+          "pyright",
+          "dockerls",
+          "docker_compose_language_service",
+          "ansiblels",
+          "marksman",
+          "tsserver",
+          "terraformls",
+          "html",
+          "cssls",
+          "css_variables",
+          "emmet_ls",
+          "volar",
+          "autotools_ls",
+          "taplo",
         }
 
         -- lsps with default config
