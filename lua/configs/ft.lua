@@ -1,7 +1,7 @@
 vim.filetype.add {
   -- Detect and assign filetype based on the extension of the filename
   extension = {
-    env = "dotenv",
+    env = "conf",
     conf = "conf",
     log = "log",
     zsh = "sh",
@@ -10,8 +10,8 @@ vim.filetype.add {
   },
   -- Detect and apply filetypes based on the entire filename
   filename = {
-    [".env"] = "dotenv",
-    ["env"] = "dotenv",
+    [".env"] = "conf",
+    ["env"] = "conf",
     [".zshrc"] = "sh",
     [".zshenv"] = "sh",
     ["hcl"] = "terraform",
@@ -21,7 +21,7 @@ vim.filetype.add {
     ["%.env%.(%a+)"] = function(path, bunfr, ext)
       -- vim.print(ext)
       if vim.tbl_contains({ "local", "example", "dev", "staging", "prod" }, ext) then
-        return "dotenv"
+        return "conf"
       end
     end,
     ["configs.json%.(%a+)"] = function(path, bunfr, ext)

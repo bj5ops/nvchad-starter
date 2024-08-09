@@ -61,6 +61,8 @@ return function(activate)
           },
 
           indent = { enable = true },
+          rainbow = { enable = true },
+          autotag = { enable = true },
 
           textobjects = {
             select = {
