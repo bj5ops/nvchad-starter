@@ -7,6 +7,7 @@ vim.filetype.add {
     zsh = "sh",
     sh = "sh",
     php = "php",
+    jsonc = "jsonc",
   },
   -- Detect and apply filetypes based on the entire filename
   filename = {
@@ -15,6 +16,14 @@ vim.filetype.add {
     [".zshrc"] = "sh",
     [".zshenv"] = "sh",
     ["hcl"] = "terraform",
+    ["tsconfig.json"] = "jsonc",
+    ["jsconfig.json"] = "jsonc",
+    [".eslintrc"] = "jsonc",
+    [".babelrc"] = "jsonc",
+    ["*.jsonc"] = "jsonc",
+    ["*.cjson"] = "jsonc",
+    [".jshintrc"] = "jsonc",
+    [".jslintrc"] = "jsonc",
   },
   -- Detect and apply filetypes based on certain patterns of the filenames
   pattern = {

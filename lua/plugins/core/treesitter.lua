@@ -7,6 +7,9 @@ return function(activate)
       event = { "BufReadPre", "BufNewFile" },
       dependencies = {
         {
+          "neoclide/jsonc.vim",
+        },
+        {
           "nvim-treesitter/nvim-treesitter-textobjects",
         },
         {
