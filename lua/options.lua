@@ -1,24 +1,42 @@
 require "nvchad.options"
 
+-- general
 vim.scriptencoding = "utf-8"
 
 local opt = vim.opt
 local o = vim.o
 
--- Numbers
-o.number = true
-o.relativenumber = true
+-- line numbers
+opt.relativenumber = true
+opt.number = true
 
--- search
-o.ignorecase = true
-o.smartcase = true
-o.hlsearch = true
-o.incsearch = true
+-- tabs & indentation
+opt.tabstop = 2 -- 2 spaces for tabs (prettier default)
+opt.shiftwidth = 2 -- 2 spaces for indent width
+opt.expandtab = true -- expand tab to spaces
+opt.autoindent = true -- copy indent from current line when starting new one
 
--- Misc
+-- line wrapping
+opt.wrap = false
+
+-- search settings
+opt.ignorecase = true
+opt.smartcase = true
+opt.hlsearch = true
+opt.incsearch = true
+
+-- split windows
+opt.splitright = true -- split vertical window to the right
+opt.splitbelow = true -- split horizontal window to the bottom
+
+-- turn off swapfile
+opt.swapfile = false
+
+-- Misc settings
 opt.encoding = "utf-8"
 opt.fileencoding = "utf-8"
-opt.swapfile = false
+opt.termguicolors = true
+opt.cursorline = true
 opt.cmdheight = 0
 opt.wildignore:append {
   "*.o",

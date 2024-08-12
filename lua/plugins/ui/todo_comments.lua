@@ -5,7 +5,7 @@ return function(activate)
     plugin = {
       "folke/todo-comments.nvim",
       cmd = { "TodoTrouble", "TodoTelescope" },
-      event = { "BufReadPost", "BufWritePost", "BufNewFile" },
+      event = { "BufReadPre", "BufNewFile" },
       dependencies = {
         "nvim-lua/plenary.nvim",
         "kevinhwang91/nvim-bqf",

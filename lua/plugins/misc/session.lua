@@ -27,12 +27,16 @@ return function(activate)
       end,
 
       keys = function()
+        local __Utils = require "utils"
         local map = vim.keymap.set
+
+        map("n", "<leader>ss", __Utils.cmd "SessionSave", { noremap = true, desc = "session save" })
+        map("n", "<leader>sr", __Utils.cmd "SessionRestore", { noremap = true, desc = "session restore" })
         map(
           "n",
-          "<leader>ss",
+          "<leader>sf",
           require("auto-session.session-lens").search_session,
-          { noremap = true, desc = "search session" }
+          { noremap = true, desc = "session search" }
         )
       end,
     }

@@ -9,6 +9,10 @@ return function(activate)
       "nvim-tree/nvim-tree.lua",
       cmd = { "NvimTreeToggle", "NvimTreeFocus", "NvimTreeFindFileToggle", "NvimTreeRefresh", "NvimTreeCollapse" },
       config = function()
+        -- recommended settings from nvim-tree documentation
+        vim.g.loaded_netrw = 1
+        vim.g.loaded_netrwPlugin = 1
+
         local HEIGHT_RATIO = 0.8 -- You can change this
         local WIDTH_RATIO = 0.3 -- You can change this too
 
@@ -100,7 +104,7 @@ return function(activate)
           },
           actions = {
             open_file = {
-              resize_window = true,
+              resize_window = false,
               window_picker = {
                 enable = false,
               },
@@ -155,6 +159,7 @@ return function(activate)
               "\\.DS_Store$",
               "\\.Trash$",
               "\\node_modules$",
+              "\\vendor$",
               "\\.vscode$",
               "\\.idea$",
             },

@@ -47,6 +47,7 @@ return {
   require "plugins.misc.surround"(env.surround),
   require "plugins.misc.spectre"(env.spectre),
   require "plugins.misc.vim_tmux"(env.vim_tmux),
+  require "plugins.misc.vim_maximizer"(env.vim_maximizer),
   require "plugins.misc.session"(env.session),
   require "plugins.misc.rename"(env.rename),
   require "plugins.misc.silicon"(env.silicon),

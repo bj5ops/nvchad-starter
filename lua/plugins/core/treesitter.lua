@@ -51,6 +51,7 @@ return function(activate)
             "scss",
             "vue",
             "git_config",
+            "gitignore",
             "ssh_config",
             "rasi",
             "regex",
@@ -66,6 +67,16 @@ return function(activate)
           indent = { enable = true },
           rainbow = { enable = true },
           autotag = { enable = true },
+
+          incremental_selection = {
+            enable = true,
+            keymaps = {
+              init_selection = "<C-space>",
+              node_incremental = "<C-space>",
+              scope_incremental = false,
+              node_decremental = "<bs>",
+            },
+          },
 
           textobjects = {
             select = {
