@@ -31,6 +31,50 @@ return function(activate)
             php = { { "pint", "php_cs_fixer" } },
           },
 
+          formatters = {
+            -- -- C & C++
+            -- ["clang-format"] = {
+            --     prepend_args = {
+            --         "-style={ \
+            --                 IndentWidth: 4, \
+            --                 TabWidth: 4, \
+            --                 UseTab: Never, \
+            --                 AccessModifierOffset: 0, \
+            --                 IndentAccessModifiers: true, \
+            --                 PackConstructorInitializers: Never}",
+            --     },
+            -- },
+            -- -- Golang
+            -- ["goimports-reviser"] = {
+            --     prepend_args = { "-rm-unused" },
+            -- },
+            -- golines = {
+            --     prepend_args = { "--max-len=80" },
+            -- },
+            -- -- Lua
+            -- stylua = {
+            --     prepend_args = {
+            --         "--column-width", "80",
+            --         "--line-endings", "Unix",
+            --         "--indent-type", "Spaces",
+            --         "--indent-width", "4",
+            --         "--quote-style", "AutoPreferDouble",
+            --     },
+            -- },
+            -- -- Python
+            -- black = {
+            --     prepend_args = {
+            --         "--fast",
+            --     },
+            -- },
+            -- isort = {
+            --     prepend_args = {
+            --         "--profile",
+            --         "black",
+            --     },
+            -- },
+          },
+
           format_on_save = function(bufnr)
             -- Disable with a global or buffer-local variable
             if vim.g.disable_autoformat or vim.b[bufnr].disable_autoformat then
