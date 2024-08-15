@@ -119,9 +119,31 @@ return function(activate)
       -- When preview is opened, the l key will close it and open fold. In all other cases these keys will work as usual.
       {
         "anuvyklack/fold-preview.nvim",
-        event = "BufReadPost",
-        dependencies = "anuvyklack/keymap-amend.nvim",
-        config = true,
+        requires = "anuvyklack/keymap-amend.nvim",
+        config = function()
+          local fp = require "fold-preview"
+          local map = require("fold-preview").mapping
+          local keymap = vim.keymap
+          keymap.amend = require "keymap-amend"
+
+          fp.setup {
+            default_keybindings = false,
+            -- another settings
+          }
+
+          keymap.amend("n", "K", function(original)
+            if not fp.show_preview() then
+              original()
+            end
+          end)
+          keymap.amend("n", "h", map.close_preview_open_fold)
+          keymap.amend("n", "l", map.close_preview_open_fold)
+          keymap.amend("n", "zo", map.close_preview)
+          keymap.amend("n", "zO", map.close_preview)
+          keymap.amend("n", "zc", map.close_preview_without_defer)
+          keymap.amend("n", "zR", map.close_preview)
+          keymap.amend("n", "zM", map.close_preview_without_defer)
+        end,
       },
     }
   end

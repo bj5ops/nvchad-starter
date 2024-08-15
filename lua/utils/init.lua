@@ -35,6 +35,19 @@ M.MergeTables = function(...)
   return result
 end
 
+--- Function to check if value is in table
+--- @param table table
+--- @param value any
+--- @return boolean
+M.TableContents = function(table, value)
+  for _, v in ipairs(table) do
+    if v == value then
+      return true
+    end
+  end
+  return false
+end
+
 --- Function to recursively merge/join tables
 --- @param into table
 --- @param from table
