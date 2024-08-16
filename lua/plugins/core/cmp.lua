@@ -17,6 +17,7 @@ return function(activate)
           },
           config = function(_, opts)
             require("luasnip").config.set_config(opts)
+            require("luasnip.loaders.from_vscode").lazy_load()
             require "nvchad.configs.luasnip"
           end,
         },
@@ -45,22 +46,40 @@ return function(activate)
         },
       },
       opts = function()
+        local cmp_ui = require("nvconfig").ui.cmp
+        local cmp_style = cmp_ui.style
         local config = require "nvchad.configs.cmp"
+        local function border(hl_name)
+          return {
+            { "┌", hl_name },
+            { "─", hl_name },
+            { "┐", hl_name },
+            { "│", hl_name },
+            { "┘", hl_name },
+            { "─", hl_name },
+            { "└", hl_name },
+            { "│", hl_name },
+          }
+        end
 
         config.sources = {
           { name = "codeium" },
           { name = "nvim_lsp" },
-          { name = "path" },
           { name = "luasnip" },
           { name = "buffer" },
           { name = "nvim_lua" },
-          { name = "cmdline" },
+          { name = "path" },
           { name = "emoji" },
           {
             name = "lazydev",
             group_index = 0, -- set group index to 0 to skip loading LuaLS completions
           },
         }
+
+        if cmp_style ~= "atom" and cmp_style ~= "atom_colored" then
+          config.window.completion.border = border "CmpBorder"
+          config.window.documentation.border = border "CmpBorder" -- default border "CmpDocBorder"
+        end
       end,
     }
   end

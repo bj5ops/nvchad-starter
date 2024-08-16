@@ -16,6 +16,12 @@ M.base46 = {
 }
 
 M.ui = {
+  cmp = {
+    icons = true,
+    lspkind_text = true,
+    style = "default", -- default/flat_light/flat_dark/atom/atom_colored
+  },
+
   nvdash = {
     load_on_startup = true,
     header = {
