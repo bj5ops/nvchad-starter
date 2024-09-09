@@ -4,6 +4,7 @@
 local env = require "configs.env"
 local hl = require "configs.hl"
 local icons = require "configs.icons"
+local c_thm = require "configs.c_themes"
 
 ---@type ChadrcConfig
 local M = {}
@@ -13,6 +14,9 @@ M.base46 = {
   transparency = env.transparency,
   hl_add = hl.add,
   hl_override = hl.override,
+  changed_themes = {
+    onedark = c_thm.onedark,
+  },
 }
 
 M.ui = {

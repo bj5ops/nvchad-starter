@@ -22,7 +22,7 @@ return function(activate)
           jsonls = {},
           dockerls = {},
           docker_compose_language_service = {},
-          tsserver = {},
+          ts_ls = {},
           ansiblels = {},
           marksman = {},
           terraformls = {},

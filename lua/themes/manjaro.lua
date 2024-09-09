@@ -58,6 +58,6 @@ M.base_16 = {
 
 M.type = "dark"
 
-M = require("base46").override_theme(M, "manjaro-onedark")
+M = require("base46").override_theme(M, "manjaro")
 
 return M

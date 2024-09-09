@@ -22,6 +22,10 @@ return function(activate)
             map("n", "<leader>cj", __Utils.cmd "TSJToggle", { desc = "Join/split code block" })
           end,
         },
+        -- {
+        --   "HiPhish/jinja.vim",
+        --   -- "Glench/Vim-Jinja2-Syntax",
+        -- },
       },
       config = function()
         local options = {
